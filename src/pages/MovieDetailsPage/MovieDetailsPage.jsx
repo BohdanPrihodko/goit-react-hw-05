@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
-import MovieCast from "../../components/MovieCast/MovieCast";
-import MovieReviews from "../../components/MovieReviews/MovieReviews";
+import MovieCast from "../../components/MovieCast/MovieCast.jsx";
+import MovieReviews from "../../components/MovieReviews/MovieReviews.jsx";
 import styles from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
@@ -19,7 +19,7 @@ const MovieDetailsPage = () => {
           {
             headers: {
               Authorization:
-                "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNGFiY2E5ODUxODEzZmZmYmIwNzMzOGEwNzA2M2VmYiIsIm5iZiI6MTcyMzkxMjc5MS44NDY3MzgsInN1YiI6IjY2YzBjYTM3OWZkYTBlNTA5YzlkYzRlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EH3DDlsJUTYLNtnhhMK9wtCPe9syxU-H5wjX12fZzOM",
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjk0NGVmMzY4YzA4MzY1YzkwMWUyOWFlYmY1NTkwYyIsIm5iZiI6MTcyNDA0NjI3NS44NzE4MjIsInN1YiI6IjY2YzBjYTM3OWZkYTBlNTA5YzlkYzRlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xa4Np5sf7Vk2RAmnIHoBVnjYjWx629KUQoTOGBAgmvw",
             },
           }
         );
@@ -49,4 +49,4 @@ const MovieDetailsPage = () => {
   );
 };
 
-export default MovieDetailsPage;
+export default MovieDetailsPage

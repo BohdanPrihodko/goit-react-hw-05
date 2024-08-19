@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import MovieList from "../../components/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList.jsx";
 import styles from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
@@ -26,7 +26,7 @@ const MoviesPage = () => {
           },
           headers: {
             Authorization:
-              "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNGFiY2E5ODUxODEzZmZmYmIwNzMzOGEwNzA2M2VmYiIsIm5iZiI6MTcyMzkxMjc5MS44NDY3MzgsInN1YiI6IjY2YzBjYTM3OWZkYTBlNTA5YzlkYzRlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EH3DDlsJUTYLNtnhhMK9wtCPe9syxU-H5wjX12fZzOM",
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjk0NGVmMzY4YzA4MzY1YzkwMWUyOWFlYmY1NTkwYyIsIm5iZiI6MTcyNDA0NjI3NS44NzE4MjIsInN1YiI6IjY2YzBjYTM3OWZkYTBlNTA5YzlkYzRlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xa4Np5sf7Vk2RAmnIHoBVnjYjWx629KUQoTOGBAgmvw",
           },
         }
       );
@@ -55,4 +55,4 @@ const MoviesPage = () => {
   );
 };
 
-export default MoviesPage;
+export default MoviesPage
