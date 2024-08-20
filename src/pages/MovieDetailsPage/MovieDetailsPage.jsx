@@ -39,8 +39,37 @@ const MovieDetailsPage = () => {
       <Link to={backLinkHref} className={styles.backLink}>
         Go back
       </Link>
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
+      <div className={styles.movieDetails}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+          className={styles.poster}
+        />
+        <div>
+          <h2>{movie.title}</h2>
+          <p>
+            <strong>User score:</strong> {movie.vote_average}
+          </p>
+          <p>
+            <strong>Overview:</strong> {movie.overview}
+          </p>
+          <p>
+            <strong>Genres:</strong>{" "}
+            {movie.genres.map((genre) => genre.name).join(", ")}
+          </p>
+        </div>
+      </div>
+      <div className={styles.additionalInfo}>
+        <h3>Additional information</h3>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </div>
       <Routes>
         <Route path="cast" element={<MovieCast />} />
         <Route path="reviews" element={<MovieReviews />} />
@@ -49,4 +78,4 @@ const MovieDetailsPage = () => {
   );
 };
 
-export default MovieDetailsPage
+export default MovieDetailsPage;

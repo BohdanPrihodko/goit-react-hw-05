@@ -5,8 +5,7 @@ import "./App.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage.jsx"));
-const MovieDetailsPage = lazy(() =>
-  import("./pages/MovieDetailsPage/MovieDetailsPage.jsx")
+const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage/MovieDetailsPage.jsx")
 );
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage.jsx"));
 
