@@ -8,6 +8,8 @@
 
 .app { border: 0;}
 
+a {padding-left: 10px;}
+
 .container {
   padding: 20px;
   max-width: 800px;
