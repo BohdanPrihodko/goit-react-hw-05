@@ -3,7 +3,7 @@ import { useParams, useLocation, Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import MovieCast from "../../components/MovieCast/MovieCast.jsx";
 import MovieReviews from "../../components/MovieReviews/MovieReviews.jsx";
-import styles from "./MovieDetailsPage.module.css"; // Імпортуйте стилі з модуля
+import styles from "./MovieDetailsPage.module.css"; 
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
