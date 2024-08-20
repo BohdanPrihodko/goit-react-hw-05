@@ -3,7 +3,7 @@ import { useParams, useLocation, Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import MovieCast from "../../components/MovieCast/MovieCast.jsx";
 import MovieReviews from "../../components/MovieReviews/MovieReviews.jsx";
-import styles from "./MovieDetailsPage.module.css";
+import styles from "./MovieDetailsPage.module.css"; // Імпортуйте стилі з модуля
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -18,8 +18,7 @@ const MovieDetailsPage = () => {
           `https://api.themoviedb.org/3/movie/${movieId}`,
           {
             headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjk0NGVmMzY4YzA4MzY1YzkwMWUyOWFlYmY1NTkwYyIsIm5iZiI6MTcyNDA0NjI3NS44NzE4MjIsInN1YiI6IjY2YzBjYTM3OWZkYTBlNTA5YzlkYzRlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xa4Np5sf7Vk2RAmnIHoBVnjYjWx629KUQoTOGBAgmvw",
+              Authorization: "Bearer ваш_ключ",
             },
           }
         );
@@ -47,20 +46,12 @@ const MovieDetailsPage = () => {
         />
         <div>
           <h2>{movie.title}</h2>
-          <p>
-            <strong>User score:</strong> {movie.vote_average}
-          </p>
-          <p>
-            <strong>Overview:</strong> {movie.overview}
-          </p>
-          <p>
-            <strong>Genres:</strong>{" "}
-            {movie.genres.map((genre) => genre.name).join(", ")}
-          </p>
+          <p>User Score: {movie.vote_average}</p>
+          <p>{movie.overview}</p>
+          <p>Genres: {movie.genres.map((genre) => genre.name).join(", ")}</p>
         </div>
       </div>
       <div className={styles.additionalInfo}>
-        <h3>Additional information</h3>
         <ul>
           <li>
             <Link to="cast">Cast</Link>
