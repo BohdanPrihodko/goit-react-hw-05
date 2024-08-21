@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useLocation, Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import MovieCast from "../../components/MovieCast/MovieCast.jsx";
 import MovieReviews from "../../components/MovieReviews/MovieReviews.jsx";
-import styles from "./MovieDetailsPage.module.css"; 
+import styles from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/movies";
+  const backLinkHref = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -36,7 +36,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={styles.container}>
-      <Link to={backLinkHref} className={styles.backLink}>
+      <Link to={backLinkHref.current} className={styles.backLink}>
         Go back
       </Link>
       <div className={styles.movieDetails}>
@@ -70,4 +70,4 @@ const MovieDetailsPage = () => {
   );
 };
 
-export default MovieDetailsPage
+export default MovieDetailsPage;
